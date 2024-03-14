@@ -1,20 +1,15 @@
-body{
-    margin: 0;
+.btn-custom{
+    background-color: #d90429;
+    color: white;
+    border: none;
 }
-.header{
-    width: 100%;
-    height: 50px;
-    background-color: blue;   
+.btn-custom:hover{
+    background-color: #ef233c;
+    color: black;
+    font-weight: bold;
+    border: none;
 }
-.nav{
-    width: 100%;
-    height: 70px;
-    background-color: aqua;
-    padding-left: 20px;
-    padding-top: 20px;
-}
-.nav a{
-    text-align: center;
-    padding-left: 20px;
-    
+.nav-link:hover{
+    font-weight: bolder;
+    color: #ef233c;
 }
