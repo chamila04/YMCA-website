@@ -1,15 +1,12 @@
-.btn-custom{
-    background-color: #d90429;
-    color: white;
-    border: none;
+.nav_bar{
+    background-color: black;
+    height: 70px;
+    margin: 0px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
-.btn-custom:hover{
-    background-color: #ef233c;
-    color: black;
-    font-weight: bold;
-    border: none;
-}
-.nav-link:hover{
-    font-weight: bolder;
-    color: #ef233c;
+.welcome{
+    background-color: gray;
+    height: 300px;
 }
