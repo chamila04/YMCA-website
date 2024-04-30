@@ -18,10 +18,12 @@
 .welcome{
     background-color: gray;
     height: 300px;
+    width: 100%;
 }
 .booking{
     background-color: gainsboro;
     height: 300px;
+    width: 100%;
 }
 .book{
     background-color: gray;
@@ -80,4 +82,8 @@
 }
 .signup_link a:hover{
     color: white;
+}
+.foot_head{
+    font-weight: bold;
+    font-size: large;
 }
