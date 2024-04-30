@@ -6,7 +6,26 @@
     position: -webkit-sticky;
     top: 0;
 }
+.nav-link{
+    font-size: large;
+    font-weight: 700;
+}
+#logo{
+    font-size: 22px;
+    font-weight: 1000;
+    color: red;
+}
 .welcome{
-    background-color: gray;
+    background-color: yellow;
     height: 300px;
+}
+.booking{
+    background-color: aqua;
+    height: 300px;
+}
+.book{
+    background-color: blue;
+    height: 200px;
+    margin: 50px;
+    display: inline-block;
 }
