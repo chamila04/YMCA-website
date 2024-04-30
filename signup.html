@@ -9,33 +9,44 @@
 
 <body>
     <div class="signup-form bg-dark">
-        <h1>Sign Up</h1>
-    <form>
-        <div class="mb-3 mt-4">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3 mt-4">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-        </div>
-        <div class="mb-3 mt-4">
-            <label for="create_pwd" class="form-label">Create Password</label>
-            <input type="password" class="form-control" id="create_pwd" required>
-        </div>
-        <div class="mb-3 mt-4">
-            <label for="confirme_pwd" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="confirm_pwd" required>
-        </div>
-        <div class="mb-3 mt-4 form-check">
-            <input type="checkbox" class="form-check-input" id="terms" required>
-            <label class="form-check-label" for="terms">I accept all <a href="terms.html">terms & conditions</a></label>
-        </div>
-        <button type="submit" class="btn mt-4 btn-danger">Sign Up</button>
-    </form>
-</div>
+        <h2>Sign Up</h2>
+        <form class="was-validated">
+            <div class="mb-3 mt-2">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Name cannot be empty.</div>
+            </div>
+            <div class="mb-3 mt-2">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">please enter a valid email address.</div>
+            </div>
+            <div class="mb-3 mt-2">
+                <label for="create_pwd" class="form-label">Create Password</label>
+                <input type="password" class="form-control" id="create_pwd" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="mb-3 mt-2">
+                <label for="confirme_pwd" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm_pwd" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="mb-3 mt-2 form-check">
+                <input type="checkbox" class="form-check-input" id="terms" required>
+                <label class="form-check-label" for="terms">I accept all <a href="terms.html">terms &
+                        conditions</a></label>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Please agree to terms & conditions to continue.</div>
+            </div>
+            <button type="submit" class="btn mt-2 btn-danger">Sign Up</button>
+        </form>
+    </div>
 
-    <script src="javascript/home.js"></script>
+    <script src="javascript/signup.js"></script>
     <script src="library/js/bootstrap.bundle.min.js"></script>
 </body>
 </body>
