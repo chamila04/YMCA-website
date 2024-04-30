@@ -16,16 +16,68 @@
     color: red;
 }
 .welcome{
-    background-color: yellow;
+    background-color: gray;
     height: 300px;
 }
 .booking{
-    background-color: aqua;
+    background-color: gainsboro;
     height: 300px;
 }
 .book{
-    background-color: blue;
+    background-color: gray;
     height: 200px;
     margin: 50px;
     display: inline-block;
+}
+.modal-body{
+    padding: 0;
+}
+.modal-content{
+    width: 80%;
+    margin-inline: auto;
+}
+.login-form{
+    padding: 30px;
+    color: white;
+    max-width: 100%;
+    margin-inline: auto;
+}
+.btn-close{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+}
+#login_head{
+    font-weight: bold;
+    text-align: center;
+}
+.form-control{
+    background-color: inherit;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    padding-left: 0;
+}
+.form-control:focus{
+    background-color: inherit;
+    color: white;
+    box-shadow: none;
+    border-color: white;
+}
+.login-form .btn{
+    border-radius: 0;
+    width: 100%;
+    font-weight: bold;
+}
+.signup_link{
+    color: gray;
+    text-align: center;
+}
+.signup_link a{
+    color: blue;
+    text-decoration: none;
+}
+.signup_link a:hover{
+    color: white;
 }

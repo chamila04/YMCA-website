@@ -29,7 +29,7 @@
       </div>
       <div class="elements col-md-3 acc d-flex align-items-center">
         <div class="container-fluid d-flex justify-content-end">
-          <button type="button" id="loginButton" class="btn btn-primary" style="margin-right: 10px;">Login</button>
+          <button type="button" id="loginButton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-right: 10px;">Login</button>
           <button type="button" class="btn btn-primary">Sign Up</button>
         </div>
       </div>
@@ -49,4 +49,32 @@
     <script src="javascript/home.js"></script>
     <script src="library/js/bootstrap.bundle.min.js"></script>
   </body>
+
+    <!--login form modal-->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content"> 
+        <div class="modal-body">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="login-form bg-dark">
+            <h1>Login</h1>
+            <form>
+              <div class="mb-3 mt-4">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3 mt-4">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <button type="submit" class="btn btn-danger mt-4">Login</button>
+            </form>
+            <p class="mt-4">Not a Member? <a href="#"> SignUp Now</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </html>
