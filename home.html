@@ -1,62 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Home</title>
-    <link
-      href="library/css/bootstrap.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/home.css" />
-  </head>
-  <body>
-    <div class="row nav_bar">
-      <div class="elements col-md-9 nav">
-        <nav class="navbar navbar-expand-sm bg-black navbar-dark">
-          <div class="container-fluid">
-            <ul class="navbar-nav">
-              <li class="nav-item" style="padding-right: 40px;">
-                <a class="nav-link" id="logo" href="home.html">YMCA</a>
-              </li>
-             <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+
+<head>
+  <title>Home</title>
+  <link href="library/css/bootstrap.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/home.css" />
+</head>
+
+<body>
+  <div class="row nav_bar">
+    <div class="elements col-md-9 nav">
+      <nav class="navbar navbar-expand-sm bg-black navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item" style="padding-right: 40px;">
+              <a class="nav-link" id="logo" href="home.html">YMCA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="elements col-md-3 acc d-flex align-items-center">
+      <div class="container-fluid d-flex justify-content-end">
+        <button type="button" id="loginbtn" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          style="margin-right: 10px;">Login</button>
+        <button type="button" id="signupbtn" class="btn btn-danger">Sign Up</button>
       </div>
-      <div class="elements col-md-3 acc d-flex align-items-center">
-        <div class="container-fluid d-flex justify-content-end">
-          <button type="button" id="loginbtn" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-right: 10px;">Login</button>
-          <button type="button" id="signupbtn" class="btn btn-danger">Sign Up</button>
+    </div>
+  </div>
+  <div class="row welcome">
+    <div class="welcome_img" style="background-image: url(images/build.png);">
+      <h1 class="welcome_head text-danger text-center pt-5">Welcome to YMCA</h1>
+      <p class="welcome_text text-white text-center">The Kandy Young Men's Christian Association, commonly known as
+        YMCA, is a
+        community-driven organization
+        dedicated to actively engaging with and addressing pressing social issues in the local community. With a
+        commitment to making a positive impact, YMCA seeks to unite young men who share a belief in Jesus Christ as
+        their God and Savior, as guided by the Holy Scriptures. Their mission is to foster discipleship in faith and
+        life, working collaboratively to extend the Kingdom of Jesus Christ among young men.</p>
+    </div>
+
+  </div>
+  <div class="row booking">
+    <h2 class="text-center">Reservation</h2>
+    <div class="elements col-md-6 book" id="room_book">
+      <div class="card">
+        <img src="images/room.jpg" class="card-img-top" alt="room">
+        <div class="card-body bg-dark text-white">
+          <h5 class="card-title">Room Reservation</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn book_btn btn-danger">Book Now</a>
         </div>
       </div>
     </div>
-    <div class="row welcome">
-      <h1>Welcom to YMCA</h1>
-    </div>
-    <div class="row booking">
-      <h2 class="text-center">Reservation</h2>
-      <div class="elements col-md-6 book" id="room_book">
-        <div class="card">
-          <img src="images/room.jpg" class="card-img-top" alt="room">
-          <div class="card-body bg-dark text-white">
-            <h5 class="card-title">Room Reservation</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn book_btn btn-danger">Book Now</a>
-          </div>
+    <div class="elements col-md-6 book" id="court_book">
+      <div class="card">
+        <img src="images/court.jpg" class="card-img-top" alt="court">
+        <div class="card-body bg-dark text-white">
+          <h5 class="card-title">Court Reservation</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn book_btn btn-danger">Book Now</a>
         </div>
-      </div>
-      <div class="elements col-md-6 book" id="court_book">
-        <div class="card">
-          <img src="images/court.jpg" class="card-img-top" alt="court">
-          <div class="card-body bg-dark text-white">
-            <h5 class="card-title">Court Reservation</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn book_btn btn-danger">Book Now</a>
-          </div>
       </div>
     </div>
     <div class="mt-5 p-4 bg-dark text-white">
@@ -66,32 +78,32 @@
 
     <script src="javascript/home.js"></script>
     <script src="library/js/bootstrap.bundle.min.js"></script>
-  </body>
+</body>
 
-    <!--login form modal-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content"> 
-        <div class="modal-body">
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="login-form bg-dark">
-            <h1 id="login_head">Login</h1>
-            <form>
-              <div class="mb-3 mt-4">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" required>
-              </div>
-              <div class="mb-3 mt-4">
-                <label for="pwd" class="form-label">Password</label>
-                <input type="password" class="form-control" id="pwd" required>
-              </div>
-              <button type="submit" class="btn btn-danger mt-4">Login</button>
-            </form>
-            <p class="mt-4">Not a Member? <a href="signup.html"> SignUp Now</a></p>
-          </div>
+<!--login form modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="login-form bg-dark">
+          <h1 id="login_head">Login</h1>
+          <form>
+            <div class="mb-3 mt-4">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3 mt-4">
+              <label for="pwd" class="form-label">Password</label>
+              <input type="password" class="form-control" id="pwd" required>
+            </div>
+            <button type="submit" class="btn btn-danger mt-4">Login</button>
+          </form>
+          <p class="mt-4">Not a Member? <a href="signup.html"> SignUp Now</a></p>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 </html>
