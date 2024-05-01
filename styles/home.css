@@ -20,17 +20,6 @@
     height: 300px;
     width: 100%;
 }
-.booking{
-    background-color: gainsboro;
-    height: 300px;
-    width: 100%;
-}
-.book{
-    background-color: gray;
-    height: 200px;
-    margin: 50px;
-    display: inline-block;
-}
 .modal-body{
     padding: 0;
 }
@@ -86,4 +75,12 @@
 .foot_head{
     font-weight: bold;
     font-size: large;
+}
+.book{
+    max-width: 30%;
+    padding-top: 2%;
+}
+.booking{
+    margin: 0;
+    padding-top: 2%;
 }
