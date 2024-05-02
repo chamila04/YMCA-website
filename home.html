@@ -4,10 +4,13 @@
 <head>
   <title>Home</title>
   <link href="library/css/bootstrap.css" rel="stylesheet" />
+  <link rel="stylesheet" href="library/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="styles/home.css" />
+  <script src="library/js/jquary.js"></script>
 </head>
 
 <body>
+  <!--navigation bar-->
   <div class="row nav_bar">
     <div class="elements col-md-9 nav">
       <nav class="navbar navbar-expand-sm bg-black navbar-dark">
@@ -28,12 +31,13 @@
     </div>
     <div class="elements col-md-3 acc d-flex align-items-center">
       <div class="container-fluid d-flex justify-content-end">
-        <button type="button" id="loginbtn" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        <button type="button" id="loginbtn" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal"
           style="margin-right: 10px;">Login</button>
         <button type="button" id="signupbtn" class="btn btn-danger">Sign Up</button>
       </div>
     </div>
   </div>
+  <!--welcome div-->
   <div class="row welcome">
     <div class="welcome_img" style="background-image: url(images/build.png);">
       <h1 class="welcome_head text-danger text-center pt-5">Welcome to YMCA</h1>
@@ -47,6 +51,7 @@
     </div>
 
   </div>
+  <!--booking div-->
   <div class="row booking">
     <h2 class="text-center">Reservation</h2>
     <div class="elements col-md-6 book" id="room_book">
@@ -56,7 +61,8 @@
           <h5 class="card-title">Room Reservation</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn book_btn btn-danger">Book Now</a>
+          <a href="#" class="btn book_btn btn-danger" data-bs-toggle="modal" data-bs-target="#roombookModal">Book
+            Now</a>
         </div>
       </div>
     </div>
@@ -67,7 +73,7 @@
           <h5 class="card-title">Court Reservation</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-          <a href="#" class="btn book_btn btn-danger">Book Now</a>
+          <a href="#" class="btn book_btn btn-danger" data-bs-toggle="modal" data-bs-target="#courtbookModal">Book Now</a>
         </div>
       </div>
     </div>
@@ -75,13 +81,16 @@
       <p class="foot_head">YMCA Kandy</p>
       <small>Copyright by KADSE231F-G11. All rights reserved.</small>
     </div>
+  </div>
 
-    <script src="javascript/home.js"></script>
-    <script src="library/js/bootstrap.bundle.min.js"></script>
+  <script src="javascript/home.js"></script>
+  <script src="library/js/bootstrap.bundle.min.js"></script>
+  <script src="library/js/bootstrap-datepicker.min.js"></script>
+  <script src="library/js/bootstrap-number-input.js"></script>
 </body>
 
 <!--login form modal-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body">
@@ -100,6 +109,85 @@
             <button type="submit" class="btn btn-danger mt-4">Login</button>
           </form>
           <p class="mt-4">Not a Member? <a href="signup.html"> SignUp Now</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--room booking modal-->
+<div class="modal fade" id="roombookModal" tabindex="-1" aria-labelledby="roombookModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="room-form bg-dark text-white">
+          <h1 class="text-center text-white">Book Room</h1>
+          <form>
+            <div class="mb-3 mt-4">
+              <div class="row">
+                <div class="col">
+                  <label for="checkin" class="form-label">Check In Date</label>
+                  <input type="text" class="form-control checkdate" id="checkinR">
+                </div>
+                <div class="col">
+                  <label for="checkout" class="form-label">Check Out Date</label>
+                  <input type="text" class="form-control checkdate" id="checkoutR">
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 mt-4" style="width: 40%;">
+              <label for="roomcount" class="form-label">number of rooms</label>
+              <input type="number" class="form-control" id="roomcount" value="1" min="1" max="5" />
+            </div>
+            <button type="submit" class="btn btn-danger mt-4">Book</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--court booking modal-->
+<div class="modal fade" id="courtbookModal" tabindex="-1" aria-labelledby="courtbookModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="court-form bg-dark text-white">
+          <h1 class="text-center text-white">Book Court</h1>
+          <form>
+            <div class="mb-3 mt-4">
+              <div class="row">
+                <div class="col">
+                  <label for="checkin" class="form-label">Check In Date</label>
+                  <input type="text" class="form-control checkdate" id="checkinC">
+                </div>
+                <div class="col">
+                  <label for="checkout" class="form-label">Check Out Date</label>
+                  <input type="text" class="form-control checkdate" id="checkoutC">
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 mt-4">
+              <div class="row">
+                <h3 cla="text-center text-white">Pick Duration</h3>
+                <div class="form-ckeck col">
+                  <input class="form-check-input" type="checkbox" value="" id="morningcheck">
+                  <label class="form-check-label" for="morningcheck">
+                    Morning (6AM-12PM)
+                  </label>
+                </div>
+                <div class="form-check col">
+                  <input class="form-check-input" type="checkbox" value="" id="afternooncheck">
+                  <label class="form-check-label" for="afternooncheck">
+                    Afternoon (12PM-6PM)
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger mt-4">Book</button>
+          </form>
         </div>
       </div>
     </div>
