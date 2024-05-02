@@ -12,7 +12,7 @@ $(document).ready(function(){
         clearBtn:true,
         endDate:'+30d',
         startDate:'+1d',
-        format:'dd/mm/yyyy',
+        format:'yyyy-mm-dd',
         todayHighlight:true
     });
 
