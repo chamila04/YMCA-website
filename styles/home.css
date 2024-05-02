@@ -141,6 +141,10 @@
     width: 100%;
     font-weight: bold;
 }
+#roomcount{
+    border: none;
+    padding-right: 0;
+}
 .court-form {
     padding: 30px;
     color: white;
@@ -151,4 +155,7 @@
     border-radius: 0;
     width: 100%;
     font-weight: bold;
+}
+.bookingcont{
+    width: 95%;
 }
