@@ -112,16 +112,16 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="login-form bg-dark">
           <h1 id="login_head">Login</h1>
-          <form for="db_login.php" method="post">
+          <form action="db_login.php" method="post">
             <div class="mb-3 mt-4">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" required />
+              <input type="email" class="form-control" id="email" name="email" required />
             </div>
             <div class="mb-3 mt-4">
               <label for="pwd" class="form-label">Password</label>
-              <input type="password" class="form-control" id="pwd" required />
+              <input type="password" class="form-control" id="pwd" name="l_pwd" required />
             </div>
-            <button type="submit" class="btn btn-danger mt-4">Login</button>
+            <button type="submit" class="btn btn-danger mt-4" name="loginbtn">Login</button>
           </form>
           <p class="mt-4">
             Not a Member? <a href="signup.php"> SignUp Now</a>
