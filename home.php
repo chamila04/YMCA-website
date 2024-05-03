@@ -140,7 +140,7 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="room-form bg-dark text-white">
           <h1 class="text-center text-white">Book Room</h1>
-          <form>
+          <form action="db_booking.php" method="post">
             <div class="mb-3 mt-4">
               <div class="row">
                 <div class="col">
