@@ -17,7 +17,7 @@
         <div class="container-fluid">
           <ul class="navbar-nav">
             <li class="nav-item" style="padding-right: 40px">
-              <a class="nav-link" id="logo" href="home.html">YMCA</a>
+              <a class="nav-link" id="logo" href="home.php">YMCA</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#">Home</a>
@@ -112,7 +112,7 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="login-form bg-dark">
           <h1 id="login_head">Login</h1>
-          <form>
+          <form for="db_login.php" method="post">
             <div class="mb-3 mt-4">
               <label for="email" class="form-label">Email address</label>
               <input type="email" class="form-control" id="email" required />
@@ -124,7 +124,7 @@
             <button type="submit" class="btn btn-danger mt-4">Login</button>
           </form>
           <p class="mt-4">
-            Not a Member? <a href="signup.html"> SignUp Now</a>
+            Not a Member? <a href="signup.php"> SignUp Now</a>
           </p>
         </div>
       </div>

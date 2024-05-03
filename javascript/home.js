@@ -1,7 +1,7 @@
 // signup button function
 $(document).ready(function(){
     $("#signupbtn").on('click',function(){
-        window.open("signup.html", "_blank");
+        window.open("signup.php", "_blank");
     });
 });
 
