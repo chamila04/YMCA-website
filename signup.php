@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Signup</title>
 
@@ -24,16 +23,7 @@
                             </div>
                         <?php
                         unset($_SESSION['error']);
-                    }
-                    if(isset($_SESSION['status'])){
-                        ?>
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <?php echo $_SESSION['status']; ?>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        <?php
-                        unset($_SESSION['status']);
-                    }
+                    } 
                 ?>
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" name="name" required>
@@ -69,9 +59,26 @@
         </form>
     </div>
 
+<?php
+if(isset($_SESSION['status'])){
+    ?>
+    <script>
+        $(document).ready(function(){
+            swal({
+                title: '<?php echo $_SESSION['status']; ?>',
+                icon: '<?php echo $_SESSION['status_code']; ?>',
+                button: "OK",
+            });
+        }); 
+    </script>
+    <?php
+    unset($_SESSION['status']);
+    unset($_SESSION['status_code']);
+}
+?>
+
     <script src="javascript/signup.js"></script>
     <script src="library/js/bootstrap.bundle.min.js"></script>
+    <script src="library/js/sweetalert.js"></script>
 </body>
-</body>
-
 </html>

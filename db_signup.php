@@ -22,6 +22,7 @@
                 $res=mysqli_query($con,$query);
                 if($res){
                     $_SESSION['status'] = "data insert successfully";
+                    $_SESSION['status_code'] = "success";
                     header('location:signup.php');
                 }
                 else{

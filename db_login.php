@@ -16,27 +16,26 @@
                 $pwd=$_POST['l_pwd'];
 
                 if($pwd == $dbpwd){
+                    $_SESSION['status'] = "login successfull";
+                    $_SESSION['status_code'] = "success";
                     header('location:home.php');
                 }
                 else{
-                    header("Location: http://localhost/dse%20final/YMCA-website/home.php");
-                    echo '<script language="javascript">';
-                    echo 'alert("wrong password")';
-                    echo '</script>';
+                    $_SESSION['status'] = "login fail";
+                    $_SESSION['status_code'] = "warning";
+                    header('location:home.php');
                 }
             }
             else{
-                header("Location: http://localhost/dse%20final/YMCA-website/home.php");
-                echo '<script language="javascript">';
-                echo 'alert("wrong email")';
-                echo '</script>';
+                $_SESSION['status'] = "wrong email";
+                $_SESSION['status_code'] = "warning";
+                header('location:home.php');
             }
         }
     }
     else{
-        header("Location: http://localhost/dse%20final/YMCA-website/home.php");
-        echo '<script language="javascript">';
-        echo 'alert("user not found")';
-        echo '</script>';
+        $_SESSION['status'] = "user not found";
+        $_SESSION['status_code'] = "warning";
+        header('location:home.php');
     }
 ?>

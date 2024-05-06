@@ -98,10 +98,29 @@
     <small>Copyright by KADSE231F-G11. All rights reserved.</small>
   </div>
 
+  <?php
+    if(isset($_SESSION['status'])){
+      ?>
+      <script>
+          $(document).ready(function(){
+              swal({
+                  title: '<?php echo $_SESSION['status']; ?>',
+                  icon: '<?php echo $_SESSION['status_code']; ?>',
+                  button: "OK",
+              });
+          }); 
+      </script>
+      <?php
+      unset($_SESSION['status']);
+      unset($_SESSION['status_code']);
+    }
+  ?>
+
   <script src="javascript/home.js"></script>
   <script src="library/js/bootstrap.bundle.min.js"></script>
   <script src="library/js/bootstrap-datepicker.min.js"></script>
   <script src="library/js/bootstrap-number-input.js"></script>
+  <script src="library/js/sweetalert.js"></script>
 </body>
 
 <!--login form modal-->
@@ -123,8 +142,8 @@
             </div>
             <button type="submit" class="btn btn-danger mt-4" name="loginbtn">Login</button>
           </form>
-          <p class="mt-4">
-            Not a Member? <a href="signup.php"> SignUp Now</a>
+          <p class="mt-4 ">
+            Not a Member? <a href="signup.php" class="text-decoration-none"> SignUp Now</a>
           </p>
         </div>
       </div>
@@ -145,19 +164,19 @@
               <div class="row">
                 <div class="col">
                   <label for="checkin" class="form-label">Check In Date</label>
-                  <input type="text" class="form-control checkdate" id="checkinR" />
+                  <input type="text" class="form-control checkdate" id="checkinR"  required/>
                 </div>
                 <div class="col">
                   <label for="checkout" class="form-label">Check Out Date</label>
-                  <input type="text" class="form-control checkdate" id="checkoutR" />
+                  <input type="text" class="form-control checkdate" id="checkoutR" required/>
                 </div>
               </div>
             </div>
             <div class="mb-3 mt-4" style="width: 30%">
               <label for="roomcount" class="form-label">number of rooms</label>
-              <input type="number" class="form-control" id="roomcount" value="1" min="1" max="5" />
+              <input type="number" class="form-control" id="roomcount" value="1" min="1" max="5" required/>
             </div>
-            <button type="submit" class="btn btn-danger mt-4">Book</button>
+            <button type="button" class="btn btn-danger mt-4">Book</button>
           </form>
         </div>
       </div>
@@ -178,11 +197,11 @@
               <div class="row">
                 <div class="col">
                   <label for="checkin" class="form-label">Check In Date</label>
-                  <input type="text" class="form-control checkdate" id="checkinC" />
+                  <input type="text" class="form-control checkdate" id="checkinC" required />
                 </div>
                 <div class="col">
                   <label for="checkout" class="form-label">Check Out Date</label>
-                  <input type="text" class="form-control checkdate" id="checkoutC" />
+                  <input type="text" class="form-control checkdate" id="checkoutC" required/>
                 </div>
               </div>
             </div>
@@ -190,20 +209,20 @@
               <div class="row">
                 <h5 class="text-white pb-md-3">Pick Duration</h5>
                 <div class="form-ckeck col">
-                  <input class="form-check-input" type="checkbox" value="" id="morningcheck" />
+                  <input class="form-check-input" type="checkbox" value="" id="morningcheck" required/>
                   <label class="form-check-label" for="morningcheck">
                     Morning (6AM-12PM)
                   </label>
                 </div>
                 <div class="form-check col">
-                  <input class="form-check-input" type="checkbox" value="" id="afternooncheck" />
+                  <input class="form-check-input" type="checkbox" value="" id="afternooncheck" required/>
                   <label class="form-check-label" for="afternooncheck">
                     Afternoon (12PM-6PM)
                   </label>
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-danger mt-4">Book</button>
+            <button type="button" class="btn btn-danger mt-4">Book</button>
           </form>
         </div>
       </div>
