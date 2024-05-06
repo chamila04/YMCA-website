@@ -103,11 +103,14 @@
       ?>
       <script>
           $(document).ready(function(){
-              swal({
+            $("#loginbtnm").on('click',function(){
+                swal({
                   title: '<?php echo $_SESSION['status']; ?>',
                   icon: '<?php echo $_SESSION['status_code']; ?>',
                   button: "OK",
               });
+            });
+              
           }); 
       </script>
       <?php
@@ -124,7 +127,7 @@
 </body>
 
 <!--login form modal-->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-focus="false">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body">
@@ -140,7 +143,7 @@
               <label for="pwd" class="form-label">Password</label>
               <input type="password" class="form-control" id="pwd" name="l_pwd" required />
             </div>
-            <button type="submit" class="btn btn-danger mt-4" name="loginbtn">Login</button>
+            <button type="submit" class="btn btn-danger mt-4" id="loginbtnm" name="loginbtn">Login</button>
           </form>
           <p class="mt-4 ">
             Not a Member? <a href="signup.php" class="text-decoration-none"> SignUp Now</a>
