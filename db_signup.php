@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     if(isset($_POST['submitbtn'])){
         $name=$_POST['name'];
         $email=$_POST['email'];
@@ -19,20 +21,17 @@
 
                 $res=mysqli_query($con,$query);
                 if($res){
-                    echo '<script language="javascript">';
-                    echo 'alert("insert data successfully")';
-                    echo '</script>';
-                    header("Location: http://localhost/dse%20final/YMCA-website/home.php");
+                    $_SESSION['status'] = "data insert successfully";
+                    header('location:signup.php');
                 }
                 else{
-                    echo 'Error inserting data: ' . mysqli_error($con);
+                    $_SESSION['error'] = "error inserting data";
+                    header('location:signup.php');
                 } 
             }
             else{
-                echo '<script language="javascript">';
-                echo 'alert("email already entered")';
-                echo '</script>';
-                header("Location: http://localhost/dse%20final/YMCA-website/signup.php");
+                $_SESSION['error'] = "email already entered";
+                header('location:signup.php');
             }
         } 
     }

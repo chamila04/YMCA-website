@@ -13,6 +13,28 @@
         <h2>Sign Up</h2>
         <form class="was-validated" id="signup_form" action="db_signup.php" method="post">
             <div class="mb-3 mt-2">
+                <?php
+                    session_start();
+
+                    if(isset($_SESSION['error'])){
+                        ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <?php echo $_SESSION['error']; ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php
+                        unset($_SESSION['error']);
+                    }
+                    if(isset($_SESSION['status'])){
+                        ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?php echo $_SESSION['status']; ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php
+                        unset($_SESSION['status']);
+                    }
+                ?>
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" name="name" required>
                 <div class="valid-feedback"></div>
