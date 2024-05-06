@@ -5,5 +5,7 @@
     $uname="ymca_web";
 
     $con=mysqli_connect($server,$user,$pwd,$uname) or die('something went wrong');
-    echo 'connection successful'
+    echo '<script language="javascript">';
+    echo 'alert("connection successful")';
+    echo '</script>';
 ?>

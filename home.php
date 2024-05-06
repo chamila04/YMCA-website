@@ -23,7 +23,7 @@
               <a class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="aboutus.html">About Us</a>
             </li>
           </ul>
         </div>
