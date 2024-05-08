@@ -23,7 +23,7 @@
                 if($res){
                     $_SESSION['status'] = "data insert successfully";
                     $_SESSION['status_code'] = "success";
-                    header('location:signup.php');
+                    header('location:home.php');
                 }
                 else{
                     $_SESSION['error'] = "error inserting data";

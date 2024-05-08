@@ -31,11 +31,10 @@
     </div>
     <div class="elements col-md-3 acc d-flex align-items-center">
       <div class="container-fluid d-flex justify-content-end">
-        <button type="button" id="loginbtn" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal"
-          style="margin-right: 10px">
+        <button type="button" id="loginbtn" class="btn btn-danger" style="margin-right: 10px">
           Login
         </button>
-        <button type="button" id="signupbtn" class="btn btn-danger">
+        <button type="button" id="signup_btn" class="btn btn-danger">
           Sign Up
         </button>
       </div>
@@ -60,8 +59,8 @@
     </div>
   </div>
   <!--booking div-->
-  <div class="row booking justify-content-center">
-    <h2 class="text-center">Reservation</h2>
+  <div class="row booking justify-content-center bg-black pb-4">
+    <h2 class="text-center text-white">Reservation</h2>
     <div class="elements col-md-6 book" id="room_book" style="margin-right: 10%;">
       <div class="card">
         <img src="images/room.jpg" class="card-img-top" alt="room" />
@@ -91,27 +90,25 @@
       </div>
     </div>
   </div>
-
   <!--footer-->
-  <div class="mt-5 p-4 bg-dark text-white">
+  <div class="p-4 bg-dark text-white">
     <p class="foot_head">YMCA Kandy</p>
     <small>Copyright by KADSE231F-G11. All rights reserved.</small>
   </div>
 
   <?php
+    session_start();
+
     if(isset($_SESSION['status'])){
       ?>
       <script>
           $(document).ready(function(){
-            $("#loginbtnm").on('click',function(){
                 swal({
                   title: '<?php echo $_SESSION['status']; ?>',
                   icon: '<?php echo $_SESSION['status_code']; ?>',
                   button: "OK",
-              });
-            });
-              
-          }); 
+                }); 
+          });
       </script>
       <?php
       unset($_SESSION['status']);
@@ -119,118 +116,117 @@
     }
   ?>
 
+  <!--login form modal-->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-focus="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="login-form bg-dark">
+            <h1 id="login_head">Login</h1>
+            <form action="db_login.php" method="post">
+              <div class="mb-3 mt-4">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+              </div>
+              <div class="mb-3 mt-4">
+                <label for="pwd" class="form-label">Password</label>
+                <input type="password" class="form-control" id="pwd" name="l_pwd" required />
+              </div>
+              <button type="submit" class="btn btn-danger mt-4" id="loginbtnm" name="loginbtn">Login</button>
+            </form>
+            <p class="mt-4 ">
+              Not a Member? <a href="signup.php" class="text-decoration-none"> SignUp Now</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--room booking modal-->
+  <div class="modal fade" id="roombookModal" tabindex="-1" aria-labelledby="roombookModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bookingcont">
+        <div class="modal-body">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="room-form bg-dark text-white">
+            <h1 class="text-center text-white">Book Room</h1>
+            <form action="db_booking.php" method="post">
+              <div class="mb-3 mt-4">
+                <div class="row">
+                  <div class="col">
+                    <label for="checkin" class="form-label">Check In Date</label>
+                    <input type="text" class="form-control checkdate" id="checkinR" name="checkinR" required/>
+                  </div>
+                  <div class="col">
+                    <label for="checkout" class="form-label">Check Out Date</label>
+                    <input type="text" class="form-control checkdate" id="checkoutR" name="checkoutR" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3 mt-4" style="width: 30%">
+                <label for="roomcount" class="form-label">number of rooms</label>
+                <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required/>
+              </div>
+              <button type="submit" name="roombtn" class="btn btn-danger mt-4">Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--court booking modal-->
+  <div class="modal fade" id="courtbookModal" tabindex="-1" aria-labelledby="courtbookModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bookingcont">
+        <div class="modal-body">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="court-form bg-dark text-white">
+            <h1 class="text-center text-white">Book Court</h1>
+            <form>
+              <div class="mb-3 mt-4">
+                <div class="row">
+                  <div class="col">
+                    <label for="checkin" class="form-label">Check In Date</label>
+                    <input type="text" class="form-control checkdate" id="checkinC" name="checkinC" required />
+                  </div>
+                  <div class="col">
+                    <label for="checkout" class="form-label">Check Out Date</label>
+                    <input type="text" class="form-control checkdate" id="checkoutC" name="checkoutC" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3 mt-4">
+                <div class="row">
+                  <h5 class="text-white pb-md-3">Pick Duration</h5>
+                  <div class="form-ckeck col">
+                    <input class="form-check-input" type="checkbox" value="morning" id="morningcheck" name="mor" optional/>
+                    <label class="form-check-label" for="morningcheck">
+                      Morning (6AM-12PM)
+                    </label>
+                  </div>
+                  <div class="form-check col">
+                    <input class="form-check-input" type="checkbox" value="afternoon" id="afternooncheck" name="aft" optional/>
+                    <label class="form-check-label" for="afternooncheck">
+                      Afternoon (12PM-6PM)
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-danger mt-4" name="courtbtn" >Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="javascript/home.js"></script>
   <script src="library/js/bootstrap.bundle.min.js"></script>
   <script src="library/js/bootstrap-datepicker.min.js"></script>
   <script src="library/js/bootstrap-number-input.js"></script>
   <script src="library/js/sweetalert.js"></script>
 </body>
-
-<!--login form modal-->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-focus="false">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="login-form bg-dark">
-          <h1 id="login_head">Login</h1>
-          <form action="db_login.php" method="post">
-            <div class="mb-3 mt-4">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" name="email" required />
-            </div>
-            <div class="mb-3 mt-4">
-              <label for="pwd" class="form-label">Password</label>
-              <input type="password" class="form-control" id="pwd" name="l_pwd" required />
-            </div>
-            <button type="submit" class="btn btn-danger mt-4" id="loginbtnm" name="loginbtn">Login</button>
-          </form>
-          <p class="mt-4 ">
-            Not a Member? <a href="signup.php" class="text-decoration-none"> SignUp Now</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--room booking modal-->
-<div class="modal fade" id="roombookModal" tabindex="-1" aria-labelledby="roombookModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bookingcont">
-      <div class="modal-body">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="room-form bg-dark text-white">
-          <h1 class="text-center text-white">Book Room</h1>
-          <form action="db_booking.php" method="post">
-            <div class="mb-3 mt-4">
-              <div class="row">
-                <div class="col">
-                  <label for="checkin" class="form-label">Check In Date</label>
-                  <input type="text" class="form-control checkdate" id="checkinR"  required/>
-                </div>
-                <div class="col">
-                  <label for="checkout" class="form-label">Check Out Date</label>
-                  <input type="text" class="form-control checkdate" id="checkoutR" required/>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3 mt-4" style="width: 30%">
-              <label for="roomcount" class="form-label">number of rooms</label>
-              <input type="number" class="form-control" id="roomcount" value="1" min="1" max="5" required/>
-            </div>
-            <button type="button" class="btn btn-danger mt-4">Book</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--court booking modal-->
-<div class="modal fade" id="courtbookModal" tabindex="-1" aria-labelledby="courtbookModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bookingcont">
-      <div class="modal-body">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="court-form bg-dark text-white">
-          <h1 class="text-center text-white">Book Court</h1>
-          <form>
-            <div class="mb-3 mt-4">
-              <div class="row">
-                <div class="col">
-                  <label for="checkin" class="form-label">Check In Date</label>
-                  <input type="text" class="form-control checkdate" id="checkinC" required />
-                </div>
-                <div class="col">
-                  <label for="checkout" class="form-label">Check Out Date</label>
-                  <input type="text" class="form-control checkdate" id="checkoutC" required/>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3 mt-4">
-              <div class="row">
-                <h5 class="text-white pb-md-3">Pick Duration</h5>
-                <div class="form-ckeck col">
-                  <input class="form-check-input" type="checkbox" value="" id="morningcheck" required/>
-                  <label class="form-check-label" for="morningcheck">
-                    Morning (6AM-12PM)
-                  </label>
-                </div>
-                <div class="form-check col">
-                  <input class="form-check-input" type="checkbox" value="" id="afternooncheck" required/>
-                  <label class="form-check-label" for="afternooncheck">
-                    Afternoon (12PM-6PM)
-                  </label>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="btn btn-danger mt-4">Book</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 </html>

@@ -7,8 +7,8 @@
     <script src="library/js/jquary.js"></script>
 </head>
 
-<body>
-    <div class="signup-form bg-dark">
+<body class="bg-dark">
+    <div class="signup-form bg-black">
         <h2>Sign Up</h2>
         <form class="was-validated" id="signup_form" action="db_signup.php" method="post">
             <div class="mb-3 mt-2">

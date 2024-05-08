@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     if(isset($_POST['loginbtn'])){
         
         $email=$_POST['email'];
@@ -14,28 +16,36 @@
                 $dbpwd=$row['cus_pwd'];
 
                 $pwd=$_POST['l_pwd'];
+                $login = false;
 
                 if($pwd == $dbpwd){
                     $_SESSION['status'] = "login successfull";
                     $_SESSION['status_code'] = "success";
-                    header('location:home.php');
+                    
+                    $login=true;
+                    $query_cusid = "SELECT cus_id FROM login WHERE cus_email='$email'";
+                    $res_cusid = mysqli_query($con, $query_cusid);
+                    $row_cusid = mysqli_fetch_assoc($res_cusid);
+                    $cusid = $row_cusid['cus_id'];
+
+                    $_SESSION['login'] = $login;
+                    $_SESSION['cusid']  = $cusid;
+
+                    header('location:home.php');   
                 }
                 else{
-                    $_SESSION['status'] = "login fail";
-                    $_SESSION['status_code'] = "warning";
-                    header('location:home.php');
+                    $_SESSION['error'] = "login fail";
+                    header('location:login.php');
                 }
             }
             else{
-                $_SESSION['status'] = "wrong email";
-                $_SESSION['status_code'] = "warning";
-                header('location:home.php');
+                $_SESSION['error'] = "wrong email";
+                header('location:login.php');
             }
         }
     }
     else{
-        $_SESSION['status'] = "user not found";
-        $_SESSION['status_code'] = "warning";
-        header('location:home.php');
+        $_SESSION['error'] = "user not found";
+        header('location:login.php');
     }
 ?>
