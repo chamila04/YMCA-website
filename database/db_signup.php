@@ -23,16 +23,16 @@
                 if($res){
                     $_SESSION['status'] = "data insert successfully";
                     $_SESSION['status_code'] = "success";
-                    header('location:home.php');
+                    header('location:../home.php');
                 }
                 else{
                     $_SESSION['error'] = "error inserting data";
-                    header('location:signup.php');
+                    header('location:../signup.php');
                 } 
             }
             else{
                 $_SESSION['error'] = "email already entered";
-                header('location:signup.php');
+                header('location:../signup.php');
             }
         } 
     }

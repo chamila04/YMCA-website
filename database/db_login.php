@@ -31,21 +31,21 @@
                     $_SESSION['login'] = $login;
                     $_SESSION['cusid']  = $cusid;
 
-                    header('location:home.php');   
+                    header('location:../home.php');   
                 }
                 else{
                     $_SESSION['error'] = "login fail";
-                    header('location:login.php');
+                    header('location:../login.php');
                 }
             }
             else{
                 $_SESSION['error'] = "wrong email";
-                header('location:login.php');
+                header('location:../login.php');
             }
         }
     }
     else{
         $_SESSION['error'] = "user not found";
-        header('location:login.php');
+        header('location:../login.php');
     }
 ?>

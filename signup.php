@@ -10,7 +10,7 @@
 <body class="bg-dark">
     <div class="signup-form bg-black">
         <h2>Sign Up</h2>
-        <form class="was-validated" id="signup_form" action="db_signup.php" method="post">
+        <form class="was-validated" id="signup_form" action="database/db_signup.php" method="post">
             <div class="mb-3 mt-2">
                 <?php
                     session_start();
@@ -40,13 +40,13 @@
                 <label for="create_pwd" class="form-label">Create Password</label>
                 <input type="password" class="form-control" id="cre_pwd" name="create_pwd" pattern=".{5,}" required>
                 <div class="valid-feedback"></div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <div class="invalid-feedback">Please enter a password.</div>
             </div>
             <div class="mb-3 mt-2">
                 <label for="confirme_pwd" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="con_pwd" name="confirm_pwd" required>
                 <div class="valid-feedback"></div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <div class="invalid-feedback">Please confirm the password.</div>
             </div>
             <div class="mb-3 mt-2 form-check">
                 <input type="checkbox" class="form-check-input" id="terms" required>

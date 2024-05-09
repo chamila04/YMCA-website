@@ -11,9 +11,9 @@
 
 <body>
   <!--navigation bar-->
-  <div class="row nav_bar">
+  <div class="row nav_bar bg-dark">
     <div class="elements col-md-9 nav">
-      <nav class="navbar navbar-expand-sm bg-black navbar-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
           <ul class="navbar-nav">
             <li class="nav-item" style="padding-right: 40px">
@@ -31,7 +31,7 @@
     </div>
     <div class="elements col-md-3 acc d-flex align-items-center">
       <div class="container-fluid d-flex justify-content-end">
-        <button type="button" id="loginbtn" class="btn btn-danger" style="margin-right: 10px">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-right: 10px">
           Login
         </button>
         <button type="button" id="signup_btn" class="btn btn-danger">
@@ -96,6 +96,7 @@
     <small>Copyright by KADSE231F-G11. All rights reserved.</small>
   </div>
 
+  <!--alert php-->
   <?php
     session_start();
 
@@ -124,7 +125,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           <div class="login-form bg-dark">
             <h1 id="login_head">Login</h1>
-            <form action="db_login.php" method="post">
+            <form action="database/db_login.php" method="post">
               <div class="mb-3 mt-4">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" required />
@@ -152,7 +153,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           <div class="room-form bg-dark text-white">
             <h1 class="text-center text-white">Book Room</h1>
-            <form action="db_booking.php" method="post">
+            <form action="database/db_room.php" method="post">
               <div class="mb-3 mt-4">
                 <div class="row">
                   <div class="col">
@@ -185,7 +186,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           <div class="court-form bg-dark text-white">
             <h1 class="text-center text-white">Book Court</h1>
-            <form>
+            <form action="database/db_court.php" method="post">
               <div class="mb-3 mt-4">
                 <div class="row">
                   <div class="col">

@@ -11,7 +11,7 @@
 <body class="bg-black">
     <div class="login-form bg-dark">
         <h1 id="login_head">Login</h1>
-        <form action="db_login.php" method="post">
+        <form action="database/db_login.php" method="post">
             <div class="mb-3 mt-4">
             <?php
                     session_start();
