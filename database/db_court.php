@@ -5,10 +5,9 @@
     if(isset($_POST['courtbtn'])){
         $checkinc=$_POST['checkinC'];
         $checkoutc=$_POST['checkoutC'];
-        $mor=$_POST['mor'];
-        $aft=$_POST['aft'];
+        $mor=$_POST['morningcheck'];
+        $aft=$_POST['afternooncheck'];
 
-        echo "hello";
 
         include_once('db_connection.php');
 
@@ -17,8 +16,8 @@
         $cusid = $_SESSION['cusid'];
 
         if($login == true){
-            $querys="INSERT INTO court_book(cus_id,checkin,checkout,rooms) VALUES('$cusid','$checkinc','$checkoutc','$mor','$aft')";
-            $ress=mysqli_query($con,$querys);
+            $query="INSERT INTO court_book(cus_id,checkin,checkout,morning,afternoon) VALUES('$cusid','$checkinc','$checkoutc','$mor','$aft')";
+            $res=mysqli_query($con,$query);
 
             $_SESSION['status'] = "booking success";
             $_SESSION['status_code'] = "success";

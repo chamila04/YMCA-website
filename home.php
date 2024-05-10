@@ -30,7 +30,7 @@
       </nav>
     </div>
     <div class="elements col-md-3 acc d-flex align-items-center">
-      <div class="container-fluid d-flex justify-content-end">
+      <div class="container-fluid d-flex justify-content-end" id="logindiv">
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-right: 10px">
           Login
         </button>
@@ -116,6 +116,32 @@
       unset($_SESSION['status_code']);
     }
   ?>
+
+  <!--login replace-->
+  <?php
+    if(isset($_SESSION['login']) && $_SESSION['uname']){
+      $login=$_SESSION['login'];
+      $uname=$_SESSION['uname'];
+    }
+  ?>
+
+  <script>
+    var login = <?php echo json_encode($login); ?>;
+    var uname = <?php echo json_encode($uname); ?>;
+
+    $(document).ready(function(){
+        if(login == true){
+          $("#logindiv").replaceWith('<div class="container-fluid d-flex justify-content-end"><h5 class="text-white mb-0">welcome '+uname+'</h5><button type="button" id="logout_btn" class="btn btn-danger ms-5">Logout</button></div>')
+        }
+      })
+  </script>
+
+  <script src="javascript/home.js"></script>
+  <script src="library/js/bootstrap.bundle.min.js"></script>
+  <script src="library/js/bootstrap-datepicker.min.js"></script>
+  <script src="library/js/bootstrap-number-input.js"></script>
+  <script src="library/js/sweetalert.js"></script>
+</body>
 
   <!--login form modal-->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-focus="false">
@@ -203,13 +229,13 @@
                 <div class="row">
                   <h5 class="text-white pb-md-3">Pick Duration</h5>
                   <div class="form-ckeck col">
-                    <input class="form-check-input" type="checkbox" value="morning" id="morningcheck" name="mor" optional/>
+                    <input class="form-check-input" type="checkbox" value="book" id="morningcheck" name="morningcheck"/>
                     <label class="form-check-label" for="morningcheck">
                       Morning (6AM-12PM)
                     </label>
                   </div>
                   <div class="form-check col">
-                    <input class="form-check-input" type="checkbox" value="afternoon" id="afternooncheck" name="aft" optional/>
+                    <input class="form-check-input" type="checkbox" value="book" id="afternooncheck" name="afternooncheck"/>
                     <label class="form-check-label" for="afternooncheck">
                       Afternoon (12PM-6PM)
                     </label>
@@ -224,10 +250,4 @@
     </div>
   </div>
 
-  <script src="javascript/home.js"></script>
-  <script src="library/js/bootstrap.bundle.min.js"></script>
-  <script src="library/js/bootstrap-datepicker.min.js"></script>
-  <script src="library/js/bootstrap-number-input.js"></script>
-  <script src="library/js/sweetalert.js"></script>
-</body>
 </html>

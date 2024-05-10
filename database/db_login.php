@@ -30,22 +30,32 @@
 
                     $_SESSION['login'] = $login;
                     $_SESSION['cusid']  = $cusid;
+                    
+                    $query_uname = "SELECT cus_name FROM login WHERE cus_email='$email'";
+                    $res_uname = mysqli_query($con, $query_uname);
+                    $row_uname = mysqli_fetch_assoc($res_uname);
+                    $uname = $row_uname['cus_name'];
+
+                    $_SESSION['uname'] = $uname;
 
                     header('location:../home.php');   
                 }
                 else{
-                    $_SESSION['error'] = "login fail";
-                    header('location:../login.php');
+                    $_SESSION['status'] = "wrong password";
+                    $_SESSION['status_code'] = "warning";
+                    header('location:../home.php');
                 }
             }
             else{
-                $_SESSION['error'] = "wrong email";
-                header('location:../login.php');
+                $_SESSION['status'] = "wrong email";
+                $_SESSION['status_code'] = "warning";
+                header('location:../home.php');
             }
         }
     }
     else{
-        $_SESSION['error'] = "user not found";
-        header('location:../login.php');
+        $_SESSION['status'] = "user not found";
+        $_SESSION['status_code'] = "warning";
+        header('location:../home.php');
     }
 ?>
