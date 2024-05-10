@@ -129,11 +129,15 @@
     var login = <?php echo json_encode($login); ?>;
     var uname = <?php echo json_encode($uname); ?>;
 
-    $(document).ready(function(){
-        if(login == true){
-          $("#logindiv").replaceWith('<div class="container-fluid d-flex justify-content-end"><h5 class="text-white mb-0">welcome '+uname+'</h5><button type="button" id="logout_btn" class="btn btn-danger ms-5">Logout</button></div>')
-        }
-      })
+    $(document).ready(function () {
+      if (login == true) {
+        $("#logindiv").replaceWith('<div class="container-fluid d-flex justify-content-end" id="logoutdiv"><h5 class="text-white mb-0">welcome ' + uname + '</h5><button type="button" id="logout_btn" class="btn btn-danger ms-5">Logout</button></div>')
+      }
+      $("#logout_btn").on('click', function () {
+        login = false;
+        $("#logoutdiv").replaceWith('<div class="container-fluid d-flex justify-content-end" id="logindiv"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-right: 10px">Login</button><button type="button" id="signup_btn" class="btn btn-danger">Sign Up</button></div>');
+      });
+    });
   </script>
 
   <script src="javascript/home.js"></script>
