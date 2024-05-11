@@ -1,0 +1,37 @@
+.room-form{
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin: 30%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+.court-form{
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin: 30%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+.btn{
+    width: 100%;
+}
+#roomcount{
+    border: none;
+    padding-right: 0;
+}
+.form-control {
+    background-color: inherit;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    padding-left: 0;
+}
+.form-control:focus {
+    background-color: inherit;
+    color: white;
+    box-shadow: none;
+    border-color: white;
+}
