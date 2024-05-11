@@ -59,6 +59,7 @@
         </form>
     </div>
 
+    <!--alert box-->
 <?php
 if(isset($_SESSION['status'])){
     ?>

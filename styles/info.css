@@ -1,0 +1,19 @@
+.nav_bar {
+    height: 70px;
+    margin: 0px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    max-width: 100%;
+}
+
+.nav-link {
+    font-size: large;
+    font-weight: 700;
+}
+
+#logo {
+    font-size: 22px;
+    font-weight: 1000;
+    color: red;
+}

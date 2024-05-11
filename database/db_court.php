@@ -26,7 +26,7 @@
         else{
             $_SESSION['status'] = "please login";
             $_SESSION['status_code'] = "warning";
-            header('location:../login.php');
+            header('location:../home.php');
         }
     }
 ?>
