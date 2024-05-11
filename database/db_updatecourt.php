@@ -91,7 +91,7 @@
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-danger mt-4" name="courtbtn" >Book</button>
+              <button type="submit" class="btn btn-danger mt-4" name="courtbtn" >Update</button>
             </form>
           </div>
 

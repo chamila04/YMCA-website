@@ -79,7 +79,7 @@
                 <label for="roomcount" class="form-label">number of rooms</label>
                 <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required/>
               </div>
-              <button type="submit" name="roombtn" class="btn btn-danger mt-4">Book</button>
+              <button type="submit" name="roombtn" class="btn btn-danger mt-4">Update</button>
             </form>
         </div>
 

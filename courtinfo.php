@@ -1,34 +1,15 @@
 <?php
+    session_start();
+
     include_once('database/db_connection.php');
 
     $query = "SELECT * FROM court_book";
     $res = mysqli_query($con,$query);
 ?>
 
-    <!--alert php-->
-<?php
-    session_start();
-
-    if(isset($_SESSION['status'])){
-      ?>
-      <script>
-          $(document).ready(function(){
-                swal({
-                  title: '<?php echo $_SESSION['status']; ?>',
-                  icon: '<?php echo $_SESSION['status_code']; ?>',
-                  button: "OK",
-                }); 
-          });
-      </script>
-      <?php
-      unset($_SESSION['status']);
-      unset($_SESSION['status_code']);
-    }
-?>
-
 <html>
 <head>
-    <title>info</title>
+    <title>court info</title>
 
     <link rel="stylesheet" href="styles/info.css" />
     <link href="library/css/bootstrap.css" rel="stylesheet" />
@@ -38,7 +19,7 @@
 <body class="bg-black">
 
     <!--navigation bar-->
-    <div class="row nav_bar bg-dark">
+    <div class="row nav_bar bg-dark fixed-top">
         <div class="elements col-md-9 nav">
         <nav class="navbar navbar-expand-sm navbar-dark">
             <div class="container-fluid">
@@ -102,10 +83,31 @@
     </div>
 
     <!--footer-->
-    <div class="p-4 mt-5 bg-dark text-white">
+    <div class="p-4 mt-5 bg-dark text-white fixed-bottom">
         <p class="foot_head">YMCA Kandy</p>
         <small>Copyright by KADSE231F-G11. All rights reserved.</small>
     </div>
+
+<!--alert php-->
+<?php
+    //session_start();
+
+    if(isset($_SESSION['status'])){
+      ?>
+      <script>
+          $(document).ready(function(){
+                swal({
+                  title: '<?php echo $_SESSION['status']; ?>',
+                  icon: '<?php echo $_SESSION['status_code']; ?>',
+                  button: "OK",
+                }); 
+          });
+      </script>
+      <?php
+      unset($_SESSION['status']);
+      unset($_SESSION['status_code']);
+    }
+?>
 
     <script src="library/js/bootstrap.bundle.min.js"></script>
     <script src="library/js/sweetalert.js"></script>

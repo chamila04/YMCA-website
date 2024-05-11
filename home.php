@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +13,7 @@
 
 <body>
   <!--navigation bar-->
-  <div class="row nav_bar bg-dark">
+  <div class="row nav_bar bg-dark fixed-top">
     <div class="elements col-md-9 nav">
       <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
@@ -65,10 +67,9 @@
       <div class="card">
         <img src="images/room.jpg" class="card-img-top" alt="room" />
         <div class="card-body bg-dark text-white">
-          <h5 class="card-title">Room Reservation</h5>
+          <h5 class="card-title fw-bold">Room Reservation</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          YMCA offers 5 cozy rooms with attached bathrooms, perfect for your stay in Kandy. Each room is designed for comfort and convenience, providing a relaxing atmosphere after a day of exploration.
           </p>
           <a href="#" class="btn book_btn btn-danger" data-bs-toggle="modal" data-bs-target="#roombookModal">Book
             Now</a>
@@ -79,10 +80,9 @@
       <div class="card">
         <img src="images/court.jpg" class="card-img-top" alt="court" />
         <div class="card-body bg-dark text-white">
-          <h5 class="card-title">Court Reservation</h5>
+          <h5 class="card-title fw-bold">Court Reservation</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          YMCA offers a well-maintained badminton court for your enjoyment. Whether you're a beginner or an experienced player, our court is the perfect place to stay active and have fun with friends and family.
           </p>
           <a href="#" class="btn book_btn btn-danger" data-bs-toggle="modal" data-bs-target="#courtbookModal">Book
             Now</a>
@@ -98,7 +98,7 @@
 
   <!--alert php-->
   <?php
-    session_start();
+    //session_start();
 
     if(isset($_SESSION['status'])){
       ?>
