@@ -124,21 +124,22 @@
       $uname=$_SESSION['uname'];
     }
   ?>
-
   <script>
     var login = <?php echo json_encode($login); ?>;
     var uname = <?php echo json_encode($uname); ?>;
 
     $(document).ready(function () {
       if (login == true) {
-        $("#logindiv").replaceWith('<div class="container-fluid d-flex justify-content-end" id="logoutdiv"><h5 class="text-white mb-0">welcome ' + uname + '</h5><a href="home.php?gg=true;" class="btn btn-danger ms-5" id="logout_btn">Logout</a></div>')
+        $("#logindiv").replaceWith('<div class="container-fluid d-flex justify-content-end" id="logoutdiv"><h5 class="text-white mb-0">welcome ' + uname + '</h5><a href="home.php?logout=true;" class="btn btn-danger ms-5" id="logout_btn">Logout</a></div>')
         
         $(document).on('click','#logout_btn',function(){
         login = false;
         $("#logoutdiv").replaceWith('<div class="container-fluid d-flex justify-content-end" id="logindiv"><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-right: 10px">Login</button><a href="signup.php" class="btn btn-danger">Sign Up</a></div>');
         <?php
-          if(isset($_GET['gg'])){
+          if(isset($_GET['logout'])){
             unset($_SESSION['login']);
+            $_SESSION['status']="logout successfull";
+            $_SESSION['status_code']="success";
           }
         ?>
       });

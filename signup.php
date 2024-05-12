@@ -59,23 +59,23 @@
         </form>
     </div>
 
-    <!--alert box-->
+<!--alert box-->
 <?php
-if(isset($_SESSION['status'])){
-    ?>
-    <script>
-        $(document).ready(function(){
-            swal({
-                title: '<?php echo $_SESSION['status']; ?>',
-                icon: '<?php echo $_SESSION['status_code']; ?>',
-                button: "OK",
-            });
-        }); 
-    </script>
-    <?php
-    unset($_SESSION['status']);
-    unset($_SESSION['status_code']);
-}
+    if(isset($_SESSION['status'])){
+        ?>
+        <script>
+            $(document).ready(function(){
+                swal({
+                    title: '<?php echo $_SESSION['status']; ?>',
+                    icon: '<?php echo $_SESSION['status_code']; ?>',
+                    button: "OK",
+                });
+            }); 
+        </script>
+        <?php
+        unset($_SESSION['status']);
+        unset($_SESSION['status_code']);
+    }
 ?>
 
     <script src="javascript/signup.js"></script>

@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="../styles/update.css" />
     <script src="../library/js/jquary.js"></script>
 
-    <?php
+  <!--update query-->
+<?php
     //session_start();
 
       if(isset($_POST['roombtn'])){

@@ -42,7 +42,7 @@
                 }
                 else{
                     $_SESSION['status'] = "wrong password";
-                    $_SESSION['status_code'] = "warning";
+                    $_SESSION['status_code'] = "error";
                     header('location:../home.php');
                 }
             }

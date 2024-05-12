@@ -21,7 +21,7 @@
 
                 $res=mysqli_query($con,$query);
                 if($res){
-                    $_SESSION['status'] = "data insert successfully";
+                    $_SESSION['status'] = "signin successfull";
                     $_SESSION['status_code'] = "success";
                     header('location:../home.php');
                 }

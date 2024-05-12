@@ -1,3 +1,4 @@
+<!--view table-->
 <?php
     session_start();
 
