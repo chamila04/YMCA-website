@@ -1,36 +1,6 @@
-<?php
-    session_start();
-
-    $id=$_GET['updateid'];
-
-    if(isset($_POST['courtbtn'])){
-        $checkinc=$_POST['checkinC'];
-        $checkoutc=$_POST['checkoutC'];
-        $mor=$_POST['morningcheck'];
-        $aft=$_POST['afternooncheck'];
-
-        include_once('db_connection.php');
-
-        $query="UPDATE court_book SET checkin='$checkinc',checkout='$checkoutc',morning='$mor',afternoon='$aft' WHERE cbook_id='$id'";
-        $res=mysqli_query($con,$query);
-
-        if($res){
-            $_SESSION['status'] = "update successfull";
-            $_SESSION['status_code'] = "success";
-            //header('location:../courtinfo.php');
-        }
-        else{
-            $_SESSION['status'] = "fail to update";
-            $_SESSION['status_code'] = "error";
-            header('location:db_updatecourt.php');
-        }
-    }
-
-?>
-
 <!--alert php-->
 <?php
-    //session_start();
+    session_start();
 
     if(isset($_SESSION['status'])){
       ?>
@@ -57,6 +27,35 @@
     <link rel="stylesheet" href="../library/css/bootstrap-datepicker.min.css" />
     <link rel="stylesheet" href="../styles/update.css" />
     <script src="../library/js/jquary.js"></script>
+
+    <?php
+    //session_start();
+
+      if(isset($_POST['courtbtn'])){
+        $checkinc=$_POST['checkinC'];
+        $checkoutc=$_POST['checkoutC'];
+        $mor=$_POST['morningcheck'];
+        $aft=$_POST['afternooncheck'];
+        $getid=$_POST['getid'];
+
+        include_once('db_connection.php');
+
+        $query="UPDATE court_book SET checkin='$checkinc',checkout='$checkoutc',morning='$mor',afternoon='$aft' WHERE cbook_id='$getid'";
+        $res=mysqli_query($con,$query);
+
+        if($res){
+            $_SESSION['status'] = "update successfull";
+            $_SESSION['status_code'] = "success";
+            header('location:../courtinfo.php');
+        }
+        else{
+            $_SESSION['status'] = "fail to update!";
+            $_SESSION['status_code'] = "error";
+            header('location:db_updatecourt.php');
+        }
+    }
+?>
+
 </head>
 <body class="bg-black">
 <div class="court-form bg-dark text-white">
@@ -91,6 +90,7 @@
                   </div>
                 </div>
               </div>
+              <input type="hidden" class="form-control getid" name="getid" value="<?php echo $_GET['updateid']; ?>" required/>
               <button type="submit" class="btn btn-danger mt-4" name="courtbtn" >Update</button>
             </form>
           </div>

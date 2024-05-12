@@ -1,37 +1,6 @@
-<?php
-    session_start();
-
-    $id=$_GET['updateid'];
-
-    if(isset($_POST['roombtn'])){
-        $checkinr=$_POST['checkinR'];
-        $checkoutr=$_POST['checkoutR'];
-        $roomcount=$_POST['roomcount'];
-        
-        include_once('db_connection.php');
-
-        $query="UPDATE room_book SET checkin='$checkinr',checkout='$checkoutr',rooms='$roomcount' WHERE rbook_id='$id'";
-        $res=mysqli_query($con,$query);
-
-        if($res){
-            $_SESSION['status'] = "update successfull";
-            $_SESSION['status_code'] = "success";
-            //header('location:../roominfo.php');
-
-            echo $id;
-        }
-        else{
-            $_SESSION['status'] = "fail to update";
-            $_SESSION['status_code'] = "error";
-            header('location:db_updateroom.php');
-        }
-    }
-
-?>
-
 <!--alert php-->
 <?php
-    //session_start();
+    session_start();
 
     if(isset($_SESSION['status'])){
       ?>
@@ -58,6 +27,34 @@
     <link rel="stylesheet" href="../library/css/bootstrap-datepicker.min.css" />
     <link rel="stylesheet" href="../styles/update.css" />
     <script src="../library/js/jquary.js"></script>
+
+    <?php
+    //session_start();
+
+      if(isset($_POST['roombtn'])){
+          $checkinr=$_POST['checkinR'];
+          $checkoutr=$_POST['checkoutR'];
+          $roomcount=$_POST['roomcount'];
+          $getid=$_POST['getid'];
+          
+          include_once('db_connection.php');
+
+          $query="UPDATE room_book SET checkin='$checkinr',checkout='$checkoutr',rooms='$roomcount' WHERE rbook_id='$getid'";
+          $res=mysqli_query($con,$query);
+
+          if($res){
+              $_SESSION['status'] = "update successfull";
+              $_SESSION['status_code'] = "success";
+              header('location:../roominfo.php');
+          }
+          else{
+              $_SESSION['status'] = "fail to update!";
+              $_SESSION['status_code'] = "error";
+              header('location:db_updateroom.php');
+          }
+      }
+?>
+
 </head>
 <body class="bg-black">
         <div class="room-form bg-dark text-white">
@@ -79,6 +76,7 @@
                 <label for="roomcount" class="form-label">number of rooms</label>
                 <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required/>
               </div>
+              <input type="hidden" class="form-control getid" name="getid" value="<?php echo $_GET['updateid']; ?>" required/>
               <button type="submit" name="roombtn" class="btn btn-danger mt-4">Update</button>
             </form>
         </div>
