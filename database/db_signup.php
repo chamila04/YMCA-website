@@ -31,7 +31,7 @@
                 } 
             }
             else{
-                $_SESSION['error'] = "email already entered";
+                $_SESSION['error'] = "email already have an account";
                 header('location:../signup.php');
             }
         } 
