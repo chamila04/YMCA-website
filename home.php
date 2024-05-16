@@ -123,8 +123,8 @@
       $login=$_SESSION['login'];
       $uname=$_SESSION['uname'];
     }
-  ?>
-  <script>
+   ?>
+   <script>
     var login = <?php echo json_encode($login); ?>;
     var uname = <?php echo json_encode($uname); ?>;
 
