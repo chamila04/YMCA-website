@@ -7,7 +7,7 @@
         $pwd=$_POST['create_pwd'];
         $cpwd=$_POST['confirm_pwd'];
 
-        $bcrypt_password=password_hash($cpwd,PASSWORD_BCRYPT);
+        //$bcrypt_password=password_hash($cpwd,PASSWORD_BCRYPT);
 
         include_once('db_connection.php');
 
