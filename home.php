@@ -208,14 +208,17 @@
                 <div class="row">
                     <div class="col">
                       <label for="roomcount" class="form-label">number of rooms</label>
-                      <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required/>
+                      <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required readonly/>
                     </div>
                     <div class="col">
                     <label for="daycount" class="form-label">number of days</label>
-                    <input type="number" class="form-control daycount" id="daycount" name="daycount" value="1" min="1" max="5" required/>
+                    <input type="number" class="form-control daycount" id="daycountr" name="daycountr" value="1" min="1" max="30" required readonly/>
                     </div>
                 </div>
-                
+              </div>
+              <div class="mb-3 mt-4" style="width:30%;">
+                <label for="price" class=form-label>price</label>
+                <input type="number" class="form-control text-white priceval" id="pricevalr" name="pricevalr" value="0.00" readonly/>
               </div>
               <button type="submit" name="roombtn" class="btn btn-danger mt-4">Book</button>
             </form>
@@ -246,10 +249,6 @@
                   </div>
                 </div>
               </div>
-              <div class="mb-3 mt-4" style="width:30%;">
-                <label for="daycount" class="form-label">number of days</label>
-                <input type="number" class="form-control daycount" id="daycount" name="daycount" value="1" min="1" max="5" required/>
-              </div>
               <div class="mb-3 mt-4">
                 <div class="row">
                   <h5 class="text-white pb-md-3">Pick Duration</h5>
@@ -266,6 +265,14 @@
                     </label>
                   </div>
                 </div>
+              </div>
+              <div class="mb-3 mt-4" style="width:30%;">
+                <label for="daycount" class="form-label">number of days</label>
+                <input type="number" class="form-control daycount" id="daycountc" name="daycountc" value="1" min="1" max="30" required readonly/>
+              </div>
+              <div class="mb-3 mt-4" style="width:30%;">
+                <label for="price" class=form-label>price</label>
+                <input type="number" class="form-control priceval" id="pricevalc" name="pricevalc" value="0.00" readonly/>
               </div>
               <button type="submit" class="btn btn-danger mt-4" name="courtbtn" >Book</button>
             </form>

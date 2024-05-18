@@ -6,6 +6,8 @@
         $checkinr=$_POST['checkinR'];
         $checkoutr=$_POST['checkoutR'];
         $roomcount=$_POST['roomcount'];
+        $days=$_POST['daycountr'];
+        $rprice=$_POST['pricevalr'];
 
         include_once('db_connection.php');
 
@@ -14,7 +16,7 @@
         $cusid = $_SESSION['cusid'];
 
         if($login == true){
-            $query="INSERT INTO room_book(cus_id,checkin,checkout,rooms) VALUES('$cusid','$checkinr','$checkoutr','$roomcount')";
+            $query="INSERT INTO room_book(cus_id,checkin,checkout,rooms,days,price) VALUES('$cusid','$checkinr','$checkoutr','$roomcount','$days','$rprice')";
             $res=mysqli_query($con,$query);
             $_SESSION['status'] = "booking success";
             $_SESSION['status_code'] = "success";

@@ -59,6 +59,8 @@
                                 <th>checkin date</th>
                                 <th>checkout date</th>
                                 <th>number of rooms</th>
+                                <th>number of days</th>
+                                <th>total price</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -71,6 +73,8 @@
                                             <td><?php echo $row['checkin']; ?></td>
                                             <td><?php echo $row['checkout']; ?></td>
                                             <td><?php echo $row['rooms']; ?></td>
+                                            <td><?php echo $row['days']; ?></td>
+                                            <td><?php echo $row['price']; ?></td>
                                             <td><a href="database/db_updateroom.php?updateid=<?php echo $row['rbook_id']; ?>" class="btn btn-primary">Update</a></td>
                                             <td><a href="database/db_deleteroom.php?deleteid=<?php echo $row['rbook_id']; ?>" class="btn btn-danger">Delete</a></td>
                                         </tr>

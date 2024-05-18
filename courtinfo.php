@@ -60,6 +60,8 @@
                                 <th>checkout date</th>
                                 <th>morning</th>
                                 <th>afternoon</th>
+                                <th>number of days</th>
+                                <th>total price</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -73,6 +75,8 @@
                                             <td><?php echo $row['checkout']; ?></td>
                                             <td><?php echo $row['morning']; ?></td>
                                             <td><?php echo $row['afternoon']; ?></td>
+                                            <td><?php echo $row['days']; ?></td>
+                                            <td><?php echo $row['price']; ?></td>
                                             <td><a href="database/db_updatecourt.php?updateid=<?php echo $row['cbook_id']; ?>" class="btn btn-primary">Update</a></td>
                                             <td><a href="database/db_deletecourt.php?deleteid=<?php echo $row['cbook_id']; ?>" class="btn btn-danger">Delete</a></td>
                                         </tr>

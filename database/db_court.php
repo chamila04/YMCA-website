@@ -7,6 +7,8 @@
         $checkoutc=$_POST['checkoutC'];
         $mor=$_POST['morningcheck'];
         $aft=$_POST['afternooncheck'];
+        $days=$_POST['daycountc'];
+        $rprice=$_POST['pricevalc'];
 
 
         include_once('db_connection.php');
@@ -16,7 +18,7 @@
         $cusid = $_SESSION['cusid'];
 
         if($login == true){
-            $query="INSERT INTO court_book(cus_id,checkin,checkout,morning,afternoon) VALUES('$cusid','$checkinc','$checkoutc','$mor','$aft')";
+            $query="INSERT INTO court_book(cus_id,checkin,checkout,morning,afternoon,days,price) VALUES('$cusid','$checkinc','$checkoutc','$mor','$aft','$days','$rprice')";
             $res=mysqli_query($con,$query);
 
             $_SESSION['status'] = "booking success";
