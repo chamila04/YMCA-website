@@ -63,7 +63,7 @@
             <form action="db_updateroom.php" method="post">
               <div class="mb-3 mt-4">
                 <div class="row">
-                  <div class="col">
+                <div class="col">
                     <label for="checkin" class="form-label">Check In Date</label>
                     <input type="text" class="form-control checkdate" id="checkinR" name="checkinR" required/>
                   </div>
@@ -73,9 +73,21 @@
                   </div>
                 </div>
               </div>
-              <div class="mb-3 mt-4" style="width: 30%">
-                <label for="roomcount" class="form-label">number of rooms</label>
-                <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required/>
+              <div class="mb-3 mt-4">
+                <div class="row">
+                    <div class="col">
+                      <label for="roomcount" class="form-label">number of rooms</label>
+                      <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required readonly/>
+                    </div>
+                    <div class="col">
+                    <label for="daycount" class="form-label">number of days</label>
+                    <input type="number" class="form-control daycount" id="daycountr" name="daycountr" value="1" min="1" max="30" required readonly/>
+                    </div>
+                </div>
+              </div>
+              <div class="mb-3 mt-4" style="width:30%;">
+                <label for="price" class=form-label>price</label>
+                <input type="number" class="form-control text-white priceval" id="pricevalr" name="pricevalr" value="0.00" readonly/>
               </div>
               <input type="hidden" class="form-control getid" name="getid" value="<?php echo $_GET['updateid']; ?>" required/>
               <button type="submit" name="roombtn" class="btn btn-danger mt-4">Update</button>

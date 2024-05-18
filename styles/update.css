@@ -21,6 +21,14 @@
     border: none;
     padding-right: 0;
 }
+#daycountr{
+    border: none;
+    padding-right: 0;
+}
+#daycountc{
+    border: none;
+    padding-right: 0;
+}
 .form-control {
     background-color: inherit;
     color: white;
