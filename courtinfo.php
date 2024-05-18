@@ -29,6 +29,9 @@
                 <a class="nav-link" id="logo" href="home.php">YMCA</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="dashboard.php">Dashboard</a>
+                </li>
+                <li class="nav-item">
                 <a class="nav-link" href="roominfo.php">Room Booking</a>
                 </li>
                 <li class="nav-item">

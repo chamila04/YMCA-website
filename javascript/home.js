@@ -21,4 +21,10 @@ $(document).ready(function(){
         downClass:'danger',
         upClass:'success'
     });
+
+    $(".daycount").bootstrapNumber({
+        center:true,
+        downClass:'danger',
+        upClass:'success'
+    });
 });

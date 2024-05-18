@@ -26,13 +26,16 @@
             <div class="container-fluid">
             <ul class="navbar-nav fw-bold">
                 <li class="nav-item" style="padding-right: 40px">
-                <a class="nav-link" id="logo" href="home.php">YMCA</a>
+                    <a class="nav-link" id="logo" href="home.php">YMCA</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" href="#">Room Booking</a>
+                    <a class="nav-link" href="dashboard.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="courtinfo.php">Court Booking</a>
+                    <a class="nav-link active" href="#">Room Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courtinfo.php">Court Booking</a>
                 </li>
             </ul>
             </div>

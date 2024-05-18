@@ -204,9 +204,18 @@
                   </div>
                 </div>
               </div>
-              <div class="mb-3 mt-4" style="width: 30%">
-                <label for="roomcount" class="form-label">number of rooms</label>
-                <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required/>
+              <div class="mb-3 mt-4">
+                <div class="row">
+                    <div class="col">
+                      <label for="roomcount" class="form-label">number of rooms</label>
+                      <input type="number" class="form-control" id="roomcount" name="roomcount" value="1" min="1" max="5" required/>
+                    </div>
+                    <div class="col">
+                    <label for="daycount" class="form-label">number of days</label>
+                    <input type="number" class="form-control daycount" id="daycount" name="daycount" value="1" min="1" max="5" required/>
+                    </div>
+                </div>
+                
               </div>
               <button type="submit" name="roombtn" class="btn btn-danger mt-4">Book</button>
             </form>
@@ -236,6 +245,10 @@
                     <input type="text" class="form-control checkdate" id="checkoutC" name="checkoutC" required/>
                   </div>
                 </div>
+              </div>
+              <div class="mb-3 mt-4" style="width:30%;">
+                <label for="daycount" class="form-label">number of days</label>
+                <input type="number" class="form-control daycount" id="daycount" name="daycount" value="1" min="1" max="5" required/>
               </div>
               <div class="mb-3 mt-4">
                 <div class="row">
