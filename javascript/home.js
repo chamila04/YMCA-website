@@ -9,7 +9,7 @@ $(document).ready(function(){
     $("#logoutdiv").on('click',function(){
         window.open("userdashboard.php","_self");
     })
-})
+});
 
 // booking modal functions
 $(document).ready(function(){
@@ -73,3 +73,9 @@ $(document).ready(function(){
     })
 
 });
+
+$(document).ready(function(){
+    $("#back_btn").on('click',function(){
+        window.open("../userdashboard.php","_self");
+    })
+})

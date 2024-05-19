@@ -59,6 +59,12 @@
         </form>
     </div>
 
+    <!--footer-->
+    <div class="p-4 bg-dark text-white">
+        <p class="foot_head">YMCA Kandy</p>
+        <small>Copyright by KADSE231F-G11. All rights reserved.</small>
+    </div>
+
 <!--alert box-->
 <?php
     if(isset($_SESSION['status'])){

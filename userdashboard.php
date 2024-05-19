@@ -33,6 +33,11 @@
                 </div>
             </nav>
         </div>
+        <div class="elements col-md-3 acc d-flex align-items-center">
+            <div class="container-fluid d-flex justify-content-end" id="accdiv">
+                <button type="button" id="acc_btn" class="btn btn-danger">Update Acconut</button>
+            </div>
+        </div>
     </div>
 
     <!--content-->

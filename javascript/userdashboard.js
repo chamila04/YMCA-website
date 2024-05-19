@@ -15,3 +15,9 @@ $(document).ready(function(){
          window.open("userdashboard.php","_self");
      }); 
  });
+
+$(document).ready(function(){
+    $("#acc_btn").on('click',function(){
+         window.open("database/db_updateacc.php","_self");
+     }); 
+ });

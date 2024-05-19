@@ -40,7 +40,7 @@
         </nav>
         </div>
         <div class="elements col-md-3 acc d-flex align-items-center">
-        <div class="container-fluid d-flex justify-content-end" id="logindiv">
+        <div class="container-fluid d-flex justify-content-end">
             <button type="button" id="back_btn" class="btn btn-danger">Back</button>
         </div>
         </div>
