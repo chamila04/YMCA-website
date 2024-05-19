@@ -79,3 +79,15 @@ $(document).ready(function(){
         window.open("../userdashboard.php","_self");
     })
 })
+
+$(document).ready(function(){
+    $('#updateacc_form').submit(function(e){
+        let pwd=$('#cre_pwd').val();
+        let c_pwd=$('#con_pwd').val();
+
+        if(pwd != c_pwd){
+            alert("passwords do not match!");
+            e.preventDefault();
+        }
+    });
+});

@@ -65,7 +65,7 @@
                                 <th>afternoon</th>
                                 <th>number of days</th>
                                 <th>total price</th>
-                                <th>Delete</th>
+                                <th>Cancel</th>
                             </tr>
                             <tr>
                                 <?php
@@ -79,7 +79,7 @@
                                             <td><?php echo $row['afternoon']; ?></td>
                                             <td><?php echo $row['days']; ?></td>
                                             <td>Rs. <?php echo $row['price']; ?>.00</td>
-                                            <td><a href="database/db_userdeletecourt.php?deleteid=<?php echo $row['cbook_id']; ?>" class="btn btn-danger">Delete</a></td>
+                                            <td><a href="database/db_userdeletecourt.php?deleteid=<?php echo $row['cbook_id']; ?>" class="btn btn-danger">Cancel</a></td>
                                         </tr>
                                         <?php
                                     }

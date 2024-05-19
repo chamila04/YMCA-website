@@ -19,6 +19,55 @@
     }
 ?>
 
+<!--update account-->
+<?php
+    include_once('db_connection.php');
+    $id=$_SESSION['cusid'];
+    $pwd=$_SESSION['pwd'];
+
+    if(isset($_POST['accbtn'])){
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $curpwd=$_POST['cur_pwd'];
+        $conpwd=$_POST['confirm_pwd'];
+
+        if($pwd == $curpwd){
+            $query="UPDATE login SET cus_name='$name',cus_email='$email',cus_pwd='$conpwd' WHERE cus_id='$id'";
+            $res=mysqli_query($con,$query);
+
+            if($res){
+                $_SESSION['status'] = "update successfull";
+                $_SESSION['status_code'] = "success";
+                header('location:../userdashboard.php');
+            }
+            else{
+                $_SESSION['status'] = "update fail";
+                $_SESSION['status_code'] = "warning";
+                header('location:../userdashboard.php');
+            }
+        }
+        else{
+            $_SESSION['status'] = "current password worng!";
+            $_SESSION['status_code'] = "warning";
+            header('location:../userdashboard.php');    
+        }
+    }
+?>
+
+<!--view details-->
+<?php
+    include_once('db_connection.php');
+    $cusid=$_SESSION['cusid'];
+
+    $query = "SELECT * FROM login WHERE cus_id='$cusid'";
+    $res = mysqli_query($con,$query);
+
+    while($row = mysqli_fetch_assoc($res)){
+        $dbname=$row['cus_name'];
+        $dbemail=$row['cus_email'];
+    }
+?>
+
 <html>
 <head>
     <title>update account</title>
@@ -37,13 +86,13 @@
             <div class="container-fluid">
             <ul class="navbar-nav fw-bold">
                 <li class="nav-item" style="padding-right: 40px">
-                    <a class="nav-link" id="logo" href="home.php">YMCA</a>
+                    <a class="nav-link" id="logo" href="../home.php">YMCA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="home.php">Home</a>
+                    <a class="nav-link" href="../home.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">About Us</a>
+                    <a class="nav-link" href="../aboutus.html">About Us</a>
                 </li>            
             </ul>
             </div>
@@ -58,18 +107,18 @@
 
         <div class="room-form bg-dark text-white">
             <h1 class="text-center text-white">Update Account</h1>
-            <form action="db_updateacc.php" method="post">
+            <form action="db_updateacc.php" method="post" id="updateacc_form">
               <div class="mb-3 mt-4">
                 <label for="name" class="form-label">name</label>
-                <input type="text" class="form-control text-white" name="name" value="" required/>
+                <input type="text" class="form-control text-primary" name="name" value="<?php echo $dbname ?>" required/>
               </div>
               <div class="mb-3 mt-4">
                 <label for="email" class="form-label">email</label>
-                <input type="text" class="form-control text-white" name="email" value="" required/>
+                <input type="text" class="form-control text-primary" name="email" value="<?php echo $dbemail ?>" required/>
               </div>
               <div class="mb-3 mt-4">
-                <label for="curr_pwd" class="form-label">current Password</label>
-                <input type="password" class="form-control" id="curr_pwd" name="curr_pwd" required>
+                <label for="cur_pwd" class="form-label">current Password</label>
+                <input type="password" class="form-control" id="cur_pwd" name="cur_pwd" required>
               </div>
               <div class="mb-3 mt-2">
                 <label for="create_pwd" class="form-label">Create Password</label>
@@ -79,7 +128,7 @@
                 <label for="confirme_pwd" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="con_pwd" name="confirm_pwd" required>
               </div>
-              <button type="submit" name="roombtn" class="btn btn-danger mt-4">Update</button>
+              <button type="submit" name="accbtn" class="btn btn-danger mt-4">Update</button>
             </form>
         </div>
 

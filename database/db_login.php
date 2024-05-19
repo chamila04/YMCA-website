@@ -28,6 +28,7 @@
                     $row_cusid = mysqli_fetch_assoc($res_cusid);
                     $cusid = $row_cusid['cus_id'];
 
+                    $_SESSION['pwd'] = $dbpwd;
                     $_SESSION['login'] = $login;
                     $_SESSION['cusid']  = $cusid;
                     

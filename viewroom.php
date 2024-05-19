@@ -64,7 +64,7 @@
                                 <th>number of rooms</th>
                                 <th>number of days</th>
                                 <th>total price</th>
-                                <th>Delete</th>
+                                <th>Cancel</th>
                             </tr>
                             <tr>
                                 <?php
@@ -77,7 +77,7 @@
                                             <td><?php echo $row['rooms']; ?></td>
                                             <td><?php echo $row['days']; ?></td>
                                             <td>Rs. <?php echo $row['price']; ?>.00</td>
-                                            <td><a href="database/db_userdeleteroom.php?deleteid=<?php echo $row['rbook_id']; ?>" class="btn btn-danger">Delete</a></td>
+                                            <td><a href="database/db_userdeleteroom.php?deleteid=<?php echo $row['rbook_id']; ?>" class="btn btn-danger">Cancel</a></td>
                                         </tr>
                                         <?php
                                     }
