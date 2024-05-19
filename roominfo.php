@@ -26,7 +26,7 @@
             <div class="container-fluid">
             <ul class="navbar-nav fw-bold">
                 <li class="nav-item" style="padding-right: 40px">
-                    <a class="nav-link" id="logo" href="home.php">YMCA</a>
+                    <a class="nav-link" id="logo" href="dashboard.php">YMCA</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
@@ -37,6 +37,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="courtinfo.php">Court Booking</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customerinfo.php">Customers</a>
+                </li>        
             </ul>
             </div>
         </nav>
@@ -74,7 +77,7 @@
                                             <td><?php echo $row['checkout']; ?></td>
                                             <td><?php echo $row['rooms']; ?></td>
                                             <td><?php echo $row['days']; ?></td>
-                                            <td><?php echo $row['price']; ?></td>
+                                            <td>Rs. <?php echo $row['price']; ?>.00</td>
                                             <td><a href="database/db_updateroom.php?updateid=<?php echo $row['rbook_id']; ?>" class="btn btn-primary">Update</a></td>
                                             <td><a href="database/db_deleteroom.php?deleteid=<?php echo $row['rbook_id']; ?>" class="btn btn-danger">Delete</a></td>
                                         </tr>

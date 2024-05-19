@@ -36,11 +36,13 @@
           $checkinr=$_POST['checkinR'];
           $checkoutr=$_POST['checkoutR'];
           $roomcount=$_POST['roomcount'];
+          $days=$_POST['daycountr'];
+          $price=$_POST['pricevalr'];
           $getid=$_POST['getid'];
           
           include_once('db_connection.php');
 
-          $query="UPDATE room_book SET checkin='$checkinr',checkout='$checkoutr',rooms='$roomcount' WHERE rbook_id='$getid'";
+          $query="UPDATE room_book SET checkin='$checkinr',checkout='$checkoutr',rooms='$roomcount',days='$days',price='$price' WHERE rbook_id='$getid'";
           $res=mysqli_query($con,$query);
 
           if($res){
@@ -59,7 +61,7 @@
 </head>
 <body class="bg-black">
         <div class="room-form bg-dark text-white">
-            <h1 class="text-center text-white">Book Room</h1>
+            <h1 class="text-center text-white">Update Room</h1>
             <form action="db_updateroom.php" method="post">
               <div class="mb-3 mt-4">
                 <div class="row">
@@ -93,6 +95,12 @@
               <button type="submit" name="roombtn" class="btn btn-danger mt-4">Update</button>
             </form>
         </div>
+
+    <!--footer-->
+    <div class="p-4 bg-dark text-white fixed-bottom">
+        <p class="foot_head">YMCA Kandy</p>
+        <small>Copyright by KADSE231F-G11. All rights reserved.</small>
+    </div>
 
 <script src="../library/js/bootstrap.bundle.min.js"></script>
 <script src="../library/js/bootstrap-datepicker.min.js"></script>

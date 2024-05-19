@@ -21,7 +21,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-nav fw-bold">
                         <li class="nav-item" style="padding-right: 40px">
-                            <a class="nav-link" id="logo" href="home.php">YMCA</a>
+                            <a class="nav-link" id="logo" href="#">YMCA</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Dashboard</a>
@@ -31,6 +31,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="courtinfo.php">Court Booking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="customerinfo.php">Customers</a>
                         </li>
                     </ul>
                 </div>
@@ -43,7 +46,7 @@
         <div class="row mt-5">
         <h2 class="text-white fw-bolder mt-5">Total Report</h2>
             <!--Total Room Bookings-->
-            <div class="col-md-3 mb-3 mt-5">
+            <div class="col-md-4 mb-3 mt-5">
             <div class="card card-body bg-primary p-3">
                 <p class="text-sm mb-0 text-capitalize">Total Room Bookings
                     <?php
@@ -63,7 +66,7 @@
             </div>
             </div>
             <!--Total Court Bookings-->
-            <div class="col-md-3 mb-3 mt-5">
+            <div class="col-md-4 mb-3 mt-5">
             <div class="card card-body bg-warning p-3">
                 <p class="text-sm mb-0 text-capitalize">Total Court Bookings
                 <?php
@@ -83,7 +86,7 @@
             </div>
             </div>
             <!--Total Customers-->
-            <div class="col-md-3 mb-3 mt-5">
+            <div class="col-md-4 mb-3 mt-5">
             <div class="card card-body bg-success p-3">
                 <p class="text-sm mb-0 text-capitalize">Total Customers
                 <?php
@@ -137,7 +140,7 @@
                     $total=$total1+$total2;
                     ?>
                 </p>
-                <h5 class="fw-bold mb-0"><?php echo $total; ?></h5>
+                <h5 class="fw-bold mb-0">Rs. <?php echo $total; ?>.00</h5>
             </div>
             </div> 
         </div>

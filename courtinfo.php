@@ -26,16 +26,19 @@
             <div class="container-fluid">
             <ul class="navbar-nav fw-bold">
                 <li class="nav-item" style="padding-right: 40px">
-                <a class="nav-link" id="logo" href="home.php">YMCA</a>
+                <a class="nav-link" id="logo" href="dashboard.php">YMCA</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.php">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="roominfo.php">Room Booking</a>
+                    <a class="nav-link" href="roominfo.php">Room Booking</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" href="#">Court Booking</a>
+                    <a class="nav-link active" href="#">Court Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="customerinfo.php">Customers</a>
                 </li>
             </ul>
             </div>
@@ -76,7 +79,7 @@
                                             <td><?php echo $row['morning']; ?></td>
                                             <td><?php echo $row['afternoon']; ?></td>
                                             <td><?php echo $row['days']; ?></td>
-                                            <td><?php echo $row['price']; ?></td>
+                                            <td>Rs. <?php echo $row['price']; ?>.00</td>
                                             <td><a href="database/db_updatecourt.php?updateid=<?php echo $row['cbook_id']; ?>" class="btn btn-primary">Update</a></td>
                                             <td><a href="database/db_deletecourt.php?deleteid=<?php echo $row['cbook_id']; ?>" class="btn btn-danger">Delete</a></td>
                                         </tr>

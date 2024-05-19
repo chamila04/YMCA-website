@@ -34,7 +34,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="aboutus.html">About Us</a>
-                </li>
+                </li>            
             </ul>
             </div>
         </nav>
@@ -78,7 +78,7 @@
                                             <td><?php echo $row['morning']; ?></td>
                                             <td><?php echo $row['afternoon']; ?></td>
                                             <td><?php echo $row['days']; ?></td>
-                                            <td><?php echo $row['price']; ?></td>
+                                            <td>Rs. <?php echo $row['price']; ?>.00</td>
                                             <td><a href="database/db_userdeletecourt.php?deleteid=<?php echo $row['cbook_id']; ?>" class="btn btn-danger">Delete</a></td>
                                         </tr>
                                         <?php

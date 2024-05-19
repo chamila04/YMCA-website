@@ -37,11 +37,13 @@
         $checkoutc=$_POST['checkoutC'];
         $mor=$_POST['morningcheck'];
         $aft=$_POST['afternooncheck'];
+        $days=$_POST['daycountc'];
+        $price=$_POST['pricevalc'];
         $getid=$_POST['getid'];
 
         include_once('db_connection.php');
 
-        $query="UPDATE court_book SET checkin='$checkinc',checkout='$checkoutc',morning='$mor',afternoon='$aft' WHERE cbook_id='$getid'";
+        $query="UPDATE court_book SET checkin='$checkinc',checkout='$checkoutc',morning='$mor',afternoon='$aft',days='$days',price='$price' WHERE cbook_id='$getid'";
         $res=mysqli_query($con,$query);
 
         if($res){
@@ -60,7 +62,7 @@
 </head>
 <body class="bg-black">
 <div class="court-form bg-dark text-white">
-            <h1 class="text-center text-white">Book Court</h1>
+            <h1 class="text-center text-white">Update Court</h1>
             <form action="db_updatecourt.php" method="post">
               <div class="mb-3 mt-4">
                 <div class="row">
@@ -103,6 +105,12 @@
               <button type="submit" class="btn btn-danger mt-4" name="courtbtn" >Update</button>
             </form>
           </div>
+
+    <!--footer-->
+    <div class="p-4 bg-dark text-white">
+        <p class="foot_head">YMCA Kandy</p>
+        <small>Copyright by KADSE231F-G11. All rights reserved.</small>
+    </div>
 
 <script src="../library/js/bootstrap.bundle.min.js"></script>
 <script src="../library/js/bootstrap-datepicker.min.js"></script>
