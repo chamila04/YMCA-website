@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2024 at 05:46 PM
+-- Generation Time: May 20, 2024 at 05:20 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,21 +30,27 @@ SET time_zone = "+00:00";
 CREATE TABLE `court_book` (
   `cbook_id` int(11) NOT NULL,
   `cus_id` int(11) NOT NULL,
-  `checkin` varchar(100) NOT NULL,
-  `checkout` varchar(100) NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
   `morning` varchar(50) NOT NULL,
-  `afternoon` varchar(100) NOT NULL
+  `afternoon` varchar(100) NOT NULL,
+  `days` int(10) NOT NULL,
+  `price` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `court_book`
 --
 
-INSERT INTO `court_book` (`cbook_id`, `cus_id`, `checkin`, `checkout`, `morning`, `afternoon`) VALUES
-(7, 44, '2024-05-14', '2024-05-15', 'book', ''),
-(11, 44, '2024-05-22', '2024-05-16', '', 'book'),
-(12, 44, '2024-05-14', '2024-05-17', 'book', ''),
-(15, 46, '2024-05-19', '2024-05-30', '', 'book');
+INSERT INTO `court_book` (`cbook_id`, `cus_id`, `checkin`, `checkout`, `morning`, `afternoon`, `days`, `price`) VALUES
+(17, 46, '2024-05-20', '2024-05-22', 'book', '', 5, 1500),
+(18, 46, '2024-05-19', '2024-05-31', 'book', 'book', 7, 3500),
+(19, 46, '2024-05-21', '2024-05-29', 'book', '', 4, 1200),
+(20, 46, '2024-05-19', '2024-05-23', 'book', '', 3, 900),
+(21, 46, '2024-05-19', '2024-05-22', 'book', 'book', 2, 1000),
+(23, 47, '2024-05-22', '2024-05-29', 'book', '', 5, 1500),
+(24, 47, '2024-05-22', '2024-05-27', 'book', 'book', 5, 2500),
+(25, 47, '2024-05-22', '2024-05-29', 'book', 'book', 4, 2000);
 
 -- --------------------------------------------------------
 
@@ -64,10 +70,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`cus_id`, `cus_name`, `cus_email`, `cus_pwd`) VALUES
-(43, 'abcd', 'a@mail.com', '115599'),
 (44, 'bcde', 'b@mail.com', '335577'),
 (45, 'cdef', 'c@mail.com', '556677'),
-(46, 'chamila', 'd@mail.com', '112233');
+(46, 'chamila', 'd@mail.com', '332211'),
+(47, 'sahan', 'e@mail.com', '112233');
 
 -- --------------------------------------------------------
 
@@ -78,19 +84,25 @@ INSERT INTO `login` (`cus_id`, `cus_name`, `cus_email`, `cus_pwd`) VALUES
 CREATE TABLE `room_book` (
   `rbook_id` int(11) NOT NULL,
   `cus_id` int(10) NOT NULL,
-  `checkin` varchar(100) NOT NULL,
-  `checkout` varchar(100) NOT NULL,
-  `rooms` int(10) NOT NULL
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `rooms` int(10) NOT NULL,
+  `days` int(10) NOT NULL,
+  `price` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `room_book`
 --
 
-INSERT INTO `room_book` (`rbook_id`, `cus_id`, `checkin`, `checkout`, `rooms`) VALUES
-(20, 44, '2024-05-22', '2024-05-21', 3),
-(21, 44, '2024-05-14', '2024-05-27', 4),
-(22, 44, '2024-05-20', '2024-05-29', 3);
+INSERT INTO `room_book` (`rbook_id`, `cus_id`, `checkin`, `checkout`, `rooms`, `days`, `price`) VALUES
+(26, 46, '2024-05-20', '2024-05-22', 3, 5, 7500),
+(27, 46, '2024-05-19', '2024-05-29', 3, 5, 7500),
+(29, 46, '2024-05-21', '2024-05-23', 3, 3, 4500),
+(31, 46, '2024-05-20', '2024-05-31', 3, 3, 4500),
+(32, 46, '2024-05-22', '2024-05-23', 3, 3, 4500),
+(34, 47, '2024-05-20', '2024-05-24', 3, 4, 6000),
+(35, 47, '2024-05-22', '2024-05-30', 3, 3, 4500);
 
 --
 -- Indexes for dumped tables
@@ -124,19 +136,19 @@ ALTER TABLE `room_book`
 -- AUTO_INCREMENT for table `court_book`
 --
 ALTER TABLE `court_book`
-  MODIFY `cbook_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `cbook_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `room_book`
 --
 ALTER TABLE `room_book`
-  MODIFY `rbook_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `rbook_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Constraints for dumped tables
